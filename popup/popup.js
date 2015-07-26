@@ -5,8 +5,6 @@ angular.module('citymapper', [])
   var map;
   var geocoder = new google.maps.Geocoder();
 
-  var currentPosition;
-
   var startMarker;
   var endMarker;
   var line;
@@ -166,19 +164,6 @@ angular.module('citymapper', [])
   }
 
   google.maps.event.addDomListener(window, 'load', function () {
-        initialize();
-
-    navigator.geolocation.getCurrentPosition(
-      function(position) {
-        // currentPosition = position;
-        // var center = {lat: 0, lng: 0};
-        // if (!position.error)
-        // {
-        //   center.lat = position.coords.latitude;
-        //   center.lng = position.coords.longitude;
-        // }
-        // ;
-      }
-    );
+    initialize();
   });
 }]);
