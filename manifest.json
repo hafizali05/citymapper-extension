@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Citymapper",
+  "description": "Gets you where you're going",
+  "version": "1.0",
+
+  "icons": { 
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png" 
+  },
+
+  "browser_action": {
+    "default_popup": "popup/popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "geolocation",
+    "http://maps.googleapis.com/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://maps.googleapis.com https://maps.gstatic.com https://mts1.googleapis.com https://mts0.googleapis.com; object-src 'self'"
+}

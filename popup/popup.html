@@ -1,0 +1,41 @@
+<html ng-app="citymapper" ng-csp>
+  <head>
+    <title>Citymapper Search</title>
+
+    <script src="../libs/angular.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="popup.css"> 
+  </head>
+  <body ng-controller="ExtensionCtrl">
+    <div class="container">
+      <div class="search-container">
+        <div class="logo-container">
+          <div class="logo" ng-click="launch()"></div>
+        </div>
+        <div class="search-fields">
+          <input ng-model="start.text" 
+                 ng-change="startChanged()"
+                 type="text" 
+                 class="search" 
+                 placeholder="Start"/>
+          <input ng-model="end.text"   
+                 ng-change="endChanged()"
+                 type="text" 
+                 class="search" 
+                 placeholder="End"/>
+        </div>
+        <div ng-click="reverse()" class="switch"></div>
+      </div>
+      <div class="button-container">
+        <button ng-click="go()">Go</button>
+      </div>
+
+      <div class="map">
+        <div id="map-canvas">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
